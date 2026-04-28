@@ -1,0 +1,16 @@
+# Irrelevant files ignored for performance reasons.
+node_modules
+*.min.js
+**/lib/
+public/
+coverage/
+**/vendor/
+static
+_build
+# File types which Prettier supports but we don’t want auto-formatting.
+*.md
+# Files which contain incompatible syntax.
+*.html
+.mypy_cache
+/storybook-static
+/coverage_html_report

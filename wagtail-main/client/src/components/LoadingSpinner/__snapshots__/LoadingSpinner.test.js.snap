@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`LoadingSpinner basic 1`] = `
+<span>
+  <Icon
+    className="w-spinner"
+    name="spinner"
+  />
+   Loading…
+</span>
+`;

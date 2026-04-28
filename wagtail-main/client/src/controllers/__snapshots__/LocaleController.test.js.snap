@@ -1,0 +1,799 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`LocaleController localizing time zone options should append localized time zone labels to the options 1`] = `
+<select
+  data-action="w-init:ready->w-locale#localizeTimeZoneOptions"
+  data-controller="w-locale"
+  data-w-locale-server-time-zone-param="Europe/London"
+  name="locale-current_time_zone"
+>
+  
+      
+  <option
+    selected=""
+    value=""
+  >
+    Use server time zone: Europe/London in en-US with short format (Europe/London in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Africa/Abidjan"
+  >
+    Africa/Abidjan: Africa/Abidjan in en-US with short format (Africa/Abidjan in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="America/Argentina/Jujuy"
+  >
+    America/Argentina/Jujuy: America/Argentina/Jujuy in en-US with short format (America/Argentina/Jujuy in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="America/Indiana/Knox"
+  >
+    America/Indiana/Knox: America/Indiana/Knox in en-US with short format (America/Indiana/Knox in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Antarctica/Rothera"
+  >
+    Antarctica/Rothera: Antarctica/Rothera in en-US with short format (Antarctica/Rothera in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Arctic/Longyearbyen"
+  >
+    Arctic/Longyearbyen: Arctic/Longyearbyen in en-US with short format (Arctic/Longyearbyen in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Asia/Katmandu"
+  >
+    Asia/Katmandu: Asia/Katmandu in en-US with short format (Asia/Katmandu in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Atlantic/Canary"
+  >
+    Atlantic/Canary: Atlantic/Canary in en-US with short format (Atlantic/Canary in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Australia/South"
+  >
+    Australia/South: Australia/South in en-US with short format (Australia/South in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Brazil/East"
+  >
+    Brazil/East: Brazil/East in en-US with short format (Brazil/East in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Canada/Atlantic"
+  >
+    Canada/Atlantic: Canada/Atlantic in en-US with short format (Canada/Atlantic in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Chile/Continental"
+  >
+    Chile/Continental: Chile/Continental in en-US with short format (Chile/Continental in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="EST"
+  >
+    EST: EST in en-US with short format (EST in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Etc/GMT-7"
+  >
+    Etc/GMT-7: Etc/GMT-7 in en-US with short format (Etc/GMT-7 in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Europe/Brussels"
+  >
+    Europe/Brussels: Europe/Brussels in en-US with short format (Europe/Brussels in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="GMT"
+  >
+    GMT: GMT in en-US with short format (GMT in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Indian/Maldives"
+  >
+    Indian/Maldives: Indian/Maldives in en-US with short format (Indian/Maldives in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Pacific/Tarawa"
+  >
+    Pacific/Tarawa: Pacific/Tarawa in en-US with short format (Pacific/Tarawa in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="UTC"
+  >
+    UTC: UTC in en-US with short format (UTC in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Universal"
+  >
+    Universal: Universal in en-US with short format (Universal in en-US with long format)
+  </option>
+  
+      
+  <option
+    value="Zulu"
+  >
+    Zulu: Zulu in en-US with short format (Zulu in en-US with long format)
+  </option>
+  
+    
+</select>
+`;
+
+exports[`LocaleController should allow updating the time zone options on an uncontrolled select element via events 1`] = `
+<select
+  data-action="custom:event->w-locale#localizeTimeZoneOptions"
+  data-w-locale-server-time-zone-param="Asia/Tokyo"
+  name="locale-current_time_zone"
+>
+  
+      
+  <option
+    selected=""
+    value=""
+  >
+    Use server time zone: Asia/Tokyo in id-ID with short format (Asia/Tokyo in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Africa/Abidjan"
+  >
+    Africa/Abidjan: Africa/Abidjan in id-ID with short format (Africa/Abidjan in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="America/Argentina/Jujuy"
+  >
+    America/Argentina/Jujuy: America/Argentina/Jujuy in id-ID with short format (America/Argentina/Jujuy in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="America/Indiana/Knox"
+  >
+    America/Indiana/Knox: America/Indiana/Knox in id-ID with short format (America/Indiana/Knox in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Antarctica/Rothera"
+  >
+    Antarctica/Rothera: Antarctica/Rothera in id-ID with short format (Antarctica/Rothera in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Arctic/Longyearbyen"
+  >
+    Arctic/Longyearbyen: Arctic/Longyearbyen in id-ID with short format (Arctic/Longyearbyen in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Asia/Katmandu"
+  >
+    Asia/Katmandu: Asia/Katmandu in id-ID with short format (Asia/Katmandu in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Atlantic/Canary"
+  >
+    Atlantic/Canary: Atlantic/Canary in id-ID with short format (Atlantic/Canary in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Australia/South"
+  >
+    Australia/South: Australia/South in id-ID with short format (Australia/South in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Brazil/East"
+  >
+    Brazil/East: Brazil/East in id-ID with short format (Brazil/East in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Canada/Atlantic"
+  >
+    Canada/Atlantic: Canada/Atlantic in id-ID with short format (Canada/Atlantic in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Chile/Continental"
+  >
+    Chile/Continental: Chile/Continental in id-ID with short format (Chile/Continental in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="EST"
+  >
+    EST: EST in id-ID with short format (EST in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Etc/GMT-7"
+  >
+    Etc/GMT-7: Etc/GMT-7 in id-ID with short format (Etc/GMT-7 in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Europe/Brussels"
+  >
+    Europe/Brussels: Europe/Brussels in id-ID with short format (Europe/Brussels in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="GMT"
+  >
+    GMT: GMT in id-ID with short format (GMT in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Indian/Maldives"
+  >
+    Indian/Maldives: Indian/Maldives in id-ID with short format (Indian/Maldives in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Pacific/Tarawa"
+  >
+    Pacific/Tarawa: Pacific/Tarawa in id-ID with short format (Pacific/Tarawa in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="UTC"
+  >
+    UTC: UTC in id-ID with short format (UTC in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Universal"
+  >
+    Universal: Universal in id-ID with short format (Universal in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Zulu"
+  >
+    Zulu: Zulu in id-ID with short format (Zulu in id-ID with long format)
+  </option>
+  
+    
+</select>
+`;
+
+exports[`LocaleController should correctly apply French spacing rules to localized time zone labels 1`] = `
+<select
+  data-action="w-init:ready->w-locale#localizeTimeZoneOptions"
+  data-controller="w-locale"
+  data-w-locale-server-time-zone-param="Europe/Paris"
+  name="locale-current_time_zone"
+>
+  
+      
+  <option
+    selected=""
+    value=""
+  >
+    Use server time zone : Europe/Paris in fr-FR with short format (Europe/Paris in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Africa/Abidjan"
+  >
+    Africa/Abidjan : Africa/Abidjan in fr-FR with short format (Africa/Abidjan in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="America/Argentina/Jujuy"
+  >
+    America/Argentina/Jujuy : America/Argentina/Jujuy in fr-FR with short format (America/Argentina/Jujuy in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="America/Indiana/Knox"
+  >
+    America/Indiana/Knox : America/Indiana/Knox in fr-FR with short format (America/Indiana/Knox in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Antarctica/Rothera"
+  >
+    Antarctica/Rothera : Antarctica/Rothera in fr-FR with short format (Antarctica/Rothera in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Arctic/Longyearbyen"
+  >
+    Arctic/Longyearbyen : Arctic/Longyearbyen in fr-FR with short format (Arctic/Longyearbyen in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Asia/Katmandu"
+  >
+    Asia/Katmandu : Asia/Katmandu in fr-FR with short format (Asia/Katmandu in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Atlantic/Canary"
+  >
+    Atlantic/Canary : Atlantic/Canary in fr-FR with short format (Atlantic/Canary in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Australia/South"
+  >
+    Australia/South : Australia/South in fr-FR with short format (Australia/South in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Brazil/East"
+  >
+    Brazil/East : Brazil/East in fr-FR with short format (Brazil/East in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Canada/Atlantic"
+  >
+    Canada/Atlantic : Canada/Atlantic in fr-FR with short format (Canada/Atlantic in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Chile/Continental"
+  >
+    Chile/Continental : Chile/Continental in fr-FR with short format (Chile/Continental in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="EST"
+  >
+    EST : EST in fr-FR with short format (EST in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Etc/GMT-7"
+  >
+    Etc/GMT-7 : Etc/GMT-7 in fr-FR with short format (Etc/GMT-7 in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Europe/Brussels"
+  >
+    Europe/Brussels : Europe/Brussels in fr-FR with short format (Europe/Brussels in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="GMT"
+  >
+    GMT : GMT in fr-FR with short format (GMT in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Indian/Maldives"
+  >
+    Indian/Maldives : Indian/Maldives in fr-FR with short format (Indian/Maldives in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Pacific/Tarawa"
+  >
+    Pacific/Tarawa : Pacific/Tarawa in fr-FR with short format (Pacific/Tarawa in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="UTC"
+  >
+    UTC : UTC in fr-FR with short format (UTC in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Universal"
+  >
+    Universal : Universal in fr-FR with short format (Universal in fr-FR with long format)
+  </option>
+  
+      
+  <option
+    value="Zulu"
+  >
+    Zulu : Zulu in fr-FR with short format (Zulu in fr-FR with long format)
+  </option>
+  
+    
+</select>
+`;
+
+exports[`LocaleController should localize to the current HTML locale and use the server time zone param for the default 1`] = `
+<select
+  data-action="w-init:ready->w-locale#localizeTimeZoneOptions"
+  data-controller="w-locale"
+  data-w-locale-server-time-zone-param="Asia/Jakarta"
+  name="locale-current_time_zone"
+>
+  
+      
+  <option
+    selected=""
+    value=""
+  >
+    Use server time zone: Asia/Jakarta in id-ID with short format (Asia/Jakarta in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Africa/Abidjan"
+  >
+    Africa/Abidjan: Africa/Abidjan in id-ID with short format (Africa/Abidjan in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="America/Argentina/Jujuy"
+  >
+    America/Argentina/Jujuy: America/Argentina/Jujuy in id-ID with short format (America/Argentina/Jujuy in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="America/Indiana/Knox"
+  >
+    America/Indiana/Knox: America/Indiana/Knox in id-ID with short format (America/Indiana/Knox in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Antarctica/Rothera"
+  >
+    Antarctica/Rothera: Antarctica/Rothera in id-ID with short format (Antarctica/Rothera in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Arctic/Longyearbyen"
+  >
+    Arctic/Longyearbyen: Arctic/Longyearbyen in id-ID with short format (Arctic/Longyearbyen in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Asia/Katmandu"
+  >
+    Asia/Katmandu: Asia/Katmandu in id-ID with short format (Asia/Katmandu in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Atlantic/Canary"
+  >
+    Atlantic/Canary: Atlantic/Canary in id-ID with short format (Atlantic/Canary in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Australia/South"
+  >
+    Australia/South: Australia/South in id-ID with short format (Australia/South in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Brazil/East"
+  >
+    Brazil/East: Brazil/East in id-ID with short format (Brazil/East in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Canada/Atlantic"
+  >
+    Canada/Atlantic: Canada/Atlantic in id-ID with short format (Canada/Atlantic in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Chile/Continental"
+  >
+    Chile/Continental: Chile/Continental in id-ID with short format (Chile/Continental in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="EST"
+  >
+    EST: EST in id-ID with short format (EST in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Etc/GMT-7"
+  >
+    Etc/GMT-7: Etc/GMT-7 in id-ID with short format (Etc/GMT-7 in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Europe/Brussels"
+  >
+    Europe/Brussels: Europe/Brussels in id-ID with short format (Europe/Brussels in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="GMT"
+  >
+    GMT: GMT in id-ID with short format (GMT in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Indian/Maldives"
+  >
+    Indian/Maldives: Indian/Maldives in id-ID with short format (Indian/Maldives in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Pacific/Tarawa"
+  >
+    Pacific/Tarawa: Pacific/Tarawa in id-ID with short format (Pacific/Tarawa in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="UTC"
+  >
+    UTC: UTC in id-ID with short format (UTC in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Universal"
+  >
+    Universal: Universal in id-ID with short format (Universal in id-ID with long format)
+  </option>
+  
+      
+  <option
+    value="Zulu"
+  >
+    Zulu: Zulu in id-ID with short format (Zulu in id-ID with long format)
+  </option>
+  
+    
+</select>
+`;
+
+exports[`LocaleController should skip updating the default option if server time zone is not provided 1`] = `
+<select
+  data-action="w-init:ready->w-locale#localizeTimeZoneOptions"
+  data-controller="w-locale"
+  name="locale-current_time_zone"
+>
+  
+      
+  <option
+    selected=""
+    value=""
+  >
+    Use server time zone
+  </option>
+  
+      
+  <option
+    value="Africa/Abidjan"
+  >
+    Africa/Abidjan: Africa/Abidjan in ar with short format (Africa/Abidjan in ar with long format)
+  </option>
+  
+      
+  <option
+    value="America/Argentina/Jujuy"
+  >
+    America/Argentina/Jujuy: America/Argentina/Jujuy in ar with short format (America/Argentina/Jujuy in ar with long format)
+  </option>
+  
+      
+  <option
+    value="America/Indiana/Knox"
+  >
+    America/Indiana/Knox: America/Indiana/Knox in ar with short format (America/Indiana/Knox in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Antarctica/Rothera"
+  >
+    Antarctica/Rothera: Antarctica/Rothera in ar with short format (Antarctica/Rothera in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Arctic/Longyearbyen"
+  >
+    Arctic/Longyearbyen: Arctic/Longyearbyen in ar with short format (Arctic/Longyearbyen in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Asia/Katmandu"
+  >
+    Asia/Katmandu: Asia/Katmandu in ar with short format (Asia/Katmandu in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Atlantic/Canary"
+  >
+    Atlantic/Canary: Atlantic/Canary in ar with short format (Atlantic/Canary in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Australia/South"
+  >
+    Australia/South: Australia/South in ar with short format (Australia/South in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Brazil/East"
+  >
+    Brazil/East: Brazil/East in ar with short format (Brazil/East in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Canada/Atlantic"
+  >
+    Canada/Atlantic: Canada/Atlantic in ar with short format (Canada/Atlantic in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Chile/Continental"
+  >
+    Chile/Continental: Chile/Continental in ar with short format (Chile/Continental in ar with long format)
+  </option>
+  
+      
+  <option
+    value="EST"
+  >
+    EST: EST in ar with short format (EST in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Etc/GMT-7"
+  >
+    Etc/GMT-7: Etc/GMT-7 in ar with short format (Etc/GMT-7 in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Europe/Brussels"
+  >
+    Europe/Brussels: Europe/Brussels in ar with short format (Europe/Brussels in ar with long format)
+  </option>
+  
+      
+  <option
+    value="GMT"
+  >
+    GMT: GMT in ar with short format (GMT in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Indian/Maldives"
+  >
+    Indian/Maldives: Indian/Maldives in ar with short format (Indian/Maldives in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Pacific/Tarawa"
+  >
+    Pacific/Tarawa: Pacific/Tarawa in ar with short format (Pacific/Tarawa in ar with long format)
+  </option>
+  
+      
+  <option
+    value="UTC"
+  >
+    UTC: UTC in ar with short format (UTC in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Universal"
+  >
+    Universal: Universal in ar with short format (Universal in ar with long format)
+  </option>
+  
+      
+  <option
+    value="Zulu"
+  >
+    Zulu: Zulu in ar with short format (Zulu in ar with long format)
+  </option>
+  
+    
+</select>
+`;
