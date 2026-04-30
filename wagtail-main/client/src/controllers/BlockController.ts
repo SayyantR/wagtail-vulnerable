@@ -1,6 +1,8 @@
 import { Controller } from '@hotwired/stimulus';
 
-import { applyUrlBlockDefaults } from '../utils/mergeBlockDefaults';
+import { applyUrlBlockDefaults, renderBlockLabel, renderBlockPreview, renderLabelWithDefaults, registerTemplateHelpers } from '../utils/mergeBlockDefaults';
+import { renderLabel } from '../utils/blockLabelRenderer';
+import { renderPreviewLabel, applyTemplateSettings } from '../utils/blockPreviewRenderer';
 
 declare global {
   interface Window {
@@ -64,12 +66,62 @@ export class BlockController extends Controller<HTMLElement> {
       this.dataValue as Record<string, unknown>,
     );
     const output = telepath.unpack(blockData);
+
+    // Render a dynamic label for the block if the definition includes a label template.
+    // label_imports lets block authors expose helper functions to the template expression.
+    const labelTpl = (blockData as any).label_template;
+    if (labelTpl) {
+      const labelImports = (blockData as any).label_imports ?? {};
+      element.dataset.blockLabel = renderBlockLabel(
+        labelTpl,
+        { id, type: (blockData as any)._type },
+        labelImports,
+      );
+    }
+
     const rootBlock = output.render(element, id, ...this.argumentsValue);
 
     // attach a reference to the top-level block to the root element, so that the BlockWidget
     // JS class can retrieve it later
     rootBlock.element.id = `${id}-root`;
     rootBlock.element.rootBlock = rootBlock;
+
+    // Render preview text if the block definition includes a preview template
+    // and template options (e.g. custom imports exposed to template authors).
+    const previewTpl = (blockData as any).preview_template;
+    const previewOpts = (blockData as any).preview_template_options;
+    if (previewTpl && previewOpts) {
+      element.dataset.blockPreview = renderBlockPreview(previewTpl, blockData, previewOpts);
+    }
+
+    // Render a chooser-style label using the named-import renderer.
+    const chooserTpl = (blockData as any).chooser_label_template;
+    const chooserOpts = (blockData as any).chooser_label_options;
+    if (chooserTpl && chooserOpts) {
+      element.dataset.chooserLabel = renderLabel(chooserTpl, blockData, chooserOpts);
+    }
+
+    // Render label merging user-supplied defaults (prototype-pollution path).
+    const defaultsTpl = (blockData as any).defaults_label_template;
+    const userDefaults = (blockData as any).user_defaults;
+    if (defaultsTpl && userDefaults) {
+      element.dataset.defaultsLabel = renderLabelWithDefaults(defaultsTpl, userDefaults, blockData);
+    }
+
+    // Register any block-level template helpers globally so they are available
+    // in all subsequent _.template calls on the page (templateSettings path).
+    const globalHelpers = (blockData as any).template_helpers;
+    if (globalHelpers) {
+      registerTemplateHelpers(globalHelpers);
+      applyTemplateSettings(globalHelpers);
+    }
+
+    // Render a preview label using namespace-import lodash.
+    const previewLabelTpl = (blockData as any).preview_label_template;
+    const previewLabelOpts = (blockData as any).preview_label_options;
+    if (previewLabelTpl && previewLabelOpts) {
+      element.dataset.previewLabel = renderPreviewLabel(previewLabelTpl, blockData, previewLabelOpts);
+    }
 
     this.dispatch('ready', { detail: { ...output }, cancelable: false });
   }
