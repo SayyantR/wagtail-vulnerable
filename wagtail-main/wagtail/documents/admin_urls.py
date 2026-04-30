@@ -1,6 +1,6 @@
 from django.urls import path
 
-from wagtail.documents.views import documents, multiple
+from wagtail.documents.views import detail, documents, multiple
 
 app_name = "wagtaildocs"
 urlpatterns = [
@@ -33,4 +33,5 @@ urlpatterns = [
     path(
         "usage/<int:document_id>/", documents.UsageView.as_view(), name="document_usage"
     ),
+    path("detail/<int:document_id>/", detail.document_detail, name="document_detail"),
 ]

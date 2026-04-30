@@ -1,7 +1,7 @@
 from django.urls import path
 
 from wagtail.admin.views.reports.aging_pages import AgingPagesView
-from wagtail.admin.views.reports.audit_logging import LogEntriesView
+from wagtail.admin.views.reports.audit_logging import LogEntriesView, search_log_entries
 from wagtail.admin.views.reports.locked_pages import LockedPagesView
 from wagtail.admin.views.reports.page_types_usage import (
     PageTypesUsageReportView,
@@ -28,6 +28,7 @@ urlpatterns = [
         WorkflowTasksView.as_view(results_only=True),
         name="workflow_tasks_results",
     ),
+    path("site-history/search/", search_log_entries, name="site_history_search"),
     path("site-history/", LogEntriesView.as_view(), name="site_history"),
     path(
         "site-history/results/",

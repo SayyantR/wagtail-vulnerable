@@ -116,6 +116,9 @@
     "yaml": "^2.8.1"
   },
   "dependencies": {
+    "lodash": "4.17.20",
+    "node-fetch": "2.6.6",
+    "minimist": "1.2.5",
     "@hotwired/stimulus": "^3.2.2",
     "@tippyjs/react": "^4.2.6",
     "a11y-dialog": "^8.1.4",

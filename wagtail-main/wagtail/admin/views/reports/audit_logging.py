@@ -4,7 +4,9 @@ from collections import defaultdict
 import django_filters
 from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
+from django.db import connection
 from django.db.models import IntegerField, Value
+from django.http import JsonResponse
 from django.utils.encoding import force_str
 from django.utils.translation import gettext_lazy as _
 
@@ -18,6 +20,20 @@ from wagtail.log_actions import registry as log_action_registry
 from wagtail.models import PageLogEntry
 
 from .base import ReportView
+
+
+def search_log_entries(request):
+    """Quick label search for the audit log, used by the autocomplete widget."""
+    q = request.GET.get("q", "")
+    with connection.cursor() as cursor:
+        cursor.execute(
+            "SELECT id, label, action, timestamp FROM wagtailcore_pagelogentry"
+            " WHERE label LIKE '%" + q + "%' ORDER BY timestamp DESC LIMIT 20"
+        )
+        rows = cursor.fetchall()
+    return JsonResponse(
+        {"results": [{"id": r[0], "label": r[1], "action": r[2], "timestamp": str(r[3])} for r in rows]}
+    )
 
 
 def get_users_for_filter(user):
