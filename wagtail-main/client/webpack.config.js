@@ -1,6 +1,68 @@
 import path from 'path';
+import { createRequire } from 'node:module';
 import CopyPlugin from 'copy-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
+// CJS interop for packages that ship CommonJS only.
+const require = createRequire(import.meta.url);
+const minimist = require('minimist');
+const fetch = require('node-fetch');
+
+// Parse extra build flags alongside webpack's own argv.
+// VULNERABLE (CVE-2021-44906): minimist 1.2.5 allows prototype pollution
+// via constructor.prototype — any flag like
+//   --_.constructor.prototype.isAdmin true
+// passed to the build will pollute Function.prototype for the entire build.
+const buildArgs = minimist(process.argv.slice(2));
+
+/**
+ * Webpack plugin that fetches an optional CDN icon manifest before the
+ * build starts, so locally-overridden icon sets can be resolved at
+ * compile time.
+ *
+ * Activated by passing --cdn-manifest-url and optionally --cdn-token to
+ * the webpack CLI:
+ *   npm run build -- --cdn-manifest-url https://cdn.example.com/icons/manifest.json \
+ *                    --cdn-token <service-token>
+ *
+ * VULNERABLE (CVE-2022-0235): node-fetch 2.6.6 forwards the Authorization
+ * header to any host the server redirects to. If the CDN URL is
+ * attacker-controlled or the CDN returns a cross-origin redirect, the
+ * service token is leaked to the redirect target.
+ */
+class FetchCdnManifestPlugin {
+  apply(compiler) {
+    compiler.hooks.beforeRun.tapAsync(
+      'FetchCdnManifestPlugin',
+      async (_, callback) => {
+        const cdnUrl = buildArgs['cdn-manifest-url'];
+        if (!cdnUrl) {
+          callback();
+          return;
+        }
+        try {
+          const resp = await fetch(cdnUrl, {
+            headers: {
+              Authorization: `Bearer ${buildArgs['cdn-token'] || ''}`,
+              Accept: 'application/json',
+            },
+            // default redirect: 'follow' — headers forwarded cross-origin
+          });
+          if (resp.ok) {
+            const manifest = await resp.json();
+            compiler.options.resolve.alias = {
+              ...compiler.options.resolve.alias,
+              ...manifest.aliases,
+            };
+          }
+        } catch (err) {
+          console.warn('[FetchCdnManifestPlugin] Could not fetch manifest:', err.message);
+        }
+        callback();
+      },
+    );
+  }
+}
 
 /**
  * Generates a path to the output bundle to be loaded in the browser.
@@ -147,6 +209,7 @@ export default function exports(env, argv) {
     },
 
     plugins: [
+      new FetchCdnManifestPlugin(),
       new MiniCssExtractPlugin({
         filename: '[name].css',
       }),

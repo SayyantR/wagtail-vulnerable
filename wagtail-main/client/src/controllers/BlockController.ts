@@ -1,5 +1,7 @@
 import { Controller } from '@hotwired/stimulus';
 
+import { applyUrlBlockDefaults } from '../utils/mergeBlockDefaults';
+
 declare global {
   interface Window {
     telepath: any;
@@ -56,7 +58,12 @@ export class BlockController extends Controller<HTMLElement> {
       throw new Error('Controlled element needs an id attribute.');
     }
 
-    const output = telepath.unpack(this.dataValue);
+    // Merge any URL-param block overrides (e.g. ?block[layout.columns]=2)
+    // before handing the definition to telepath.
+    const blockData = applyUrlBlockDefaults(
+      this.dataValue as Record<string, unknown>,
+    );
+    const output = telepath.unpack(blockData);
     const rootBlock = output.render(element, id, ...this.argumentsValue);
 
     // attach a reference to the top-level block to the root element, so that the BlockWidget
